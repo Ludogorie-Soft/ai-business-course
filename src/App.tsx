@@ -164,7 +164,7 @@ export default function App() {
                 className="bg-brand-accent hover:bg-brand-accent-hover text-white px-6 py-2.5 rounded-xl font-bold text-sm tracking-wide shadow-lg hover:shadow-brand-accent/30 transition-all duration-300 hover:-translate-y-0.5 inline-flex items-center gap-2 border border-brand-accent"
                 id="nav-cta"
               >
-                <span>Запиши се</span>
+                <span>Заяви желание</span>
                 <ArrowRight className="h-4 w-4" />
               </a>
             </div>
@@ -239,7 +239,7 @@ export default function App() {
                   className="w-full text-center bg-brand-accent hover:bg-brand-accent-hover text-white block py-3.5 rounded-xl font-bold tracking-wide shadow-lg transition-all"
                   id="mobile-nav-cta"
                 >
-                  Запиши се
+                  Заяви желание
                 </a>
               </div>
             </div>
@@ -326,7 +326,7 @@ export default function App() {
                   className="w-full sm:w-auto bg-brand-accent hover:bg-brand-accent-hover text-white text-lg font-extrabold px-10 py-4.5 rounded-2xl shadow-[0_10px_30px_rgba(255,140,66,0.35)] transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-3 active:scale-[0.98] border border-brand-accent"
                   id="hero-cta"
                 >
-                  <span>Запиши се за безплатен курс</span>
+                  <span>Заяви желание за безплатен курс</span>
                   <ArrowRight className="h-5 w-5 stroke-[2.5]" />
                 </a>
               </div>
@@ -1000,7 +1000,7 @@ export default function App() {
                   className="bg-brand-accent hover:bg-brand-accent-hover text-white text-lg sm:text-xl font-extrabold px-12 py-5 rounded-2xl shadow-[0_15px_35px_rgba(255,140,66,0.35)] transition-all duration-300 hover:scale-[1.03] inline-flex items-center justify-center gap-3 active:scale-[0.97] border border-brand-accent"
                   id="final-cta-btn"
                 >
-                  <span>Запиши се</span>
+                  <span>Заяви желание</span>
                   <ArrowRight className="h-6 w-6 stroke-[3]" />
                 </a>
               </div>
