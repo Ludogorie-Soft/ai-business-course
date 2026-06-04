@@ -28,10 +28,14 @@ import {
 import HERO_IMAGE from "./assets/images/ai_startup_hero_bg_bulgarian_1780401928788.png";
 import EMO_IMAGE from "./assets/images/Emo.png";
 import SEVDELIN_IMAGE from "./assets/images/Sevdelin.png";
+import { useCookieConsent } from "./CookieConsentProvider.tsx";
+import { LEGAL_LINK_PROPS, ROUTES } from "./constants/legal.ts";
 
 const GOOGLE_FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSeb_14TsUdqAwmDXOvAxKAK_OzGufzwV8X8NtwY_NU8Tkn2sQ/viewform?usp=dialog";
 
 export default function App() {
+  const { reopenSettings } = useCookieConsent();
+
   // Navigation & UI States
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeTab, setActiveTab] = useState<number>(1);
@@ -1051,13 +1055,33 @@ export default function App() {
               <a href="#lecturers" className="hover:text-brand-accent transition-colors">Лектори</a>
               <a href="#audience" className="hover:text-brand-accent transition-colors">За кого е</a>
               <a href="#faq" className="hover:text-brand-accent transition-colors">ЧЗВ</a>
+              <a
+                href={ROUTES.privacy}
+                {...LEGAL_LINK_PROPS}
+                className="hover:text-brand-accent transition-colors"
+              >
+                Поверителност
+              </a>
+              <a
+                href={ROUTES.cookies}
+                {...LEGAL_LINK_PROPS}
+                className="hover:text-brand-accent transition-colors"
+              >
+                Бисквитки
+              </a>
             </div>
 
             {/* Right copyright details */}
             <div className="md:col-span-3 text-left md:text-right space-y-1">
               <div className="text-xs text-[#FFC19E] font-bold">Безплатен онлайн курс</div>
               <p className="text-xs text-neutral-400 mt-2">© 2026 Всички права запазени.</p>
-              <p className="text-[10px] text-neutral-600">Образователна Академия на Враца Софтуер</p>
+              <button
+                type="button"
+                onClick={reopenSettings}
+                className="text-[10px] text-neutral-500 underline-offset-2 hover:text-neutral-300 hover:underline"
+              >
+                Настройки за бисквитки
+              </button>
             </div>
 
           </div>

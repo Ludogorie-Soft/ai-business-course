@@ -1,14 +1,15 @@
 import {StrictMode} from 'react';
 import {createRoot} from 'react-dom/client';
-import {Analytics} from '@vercel/analytics/react';
 import {SpeedInsights} from '@vercel/speed-insights/react';
-import App from './App.tsx';
+import {CookieConsentProvider} from './CookieConsentProvider.tsx';
+import {AppRouter} from './AppRouter.tsx';
 import './index.css';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <App />
-    <Analytics />
-    <SpeedInsights />
+    <CookieConsentProvider>
+      <AppRouter />
+      <SpeedInsights />
+    </CookieConsentProvider>
   </StrictMode>,
 );
