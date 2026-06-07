@@ -12,6 +12,7 @@ interface ImportMeta {
 interface Window {
   dataLayer?: unknown[];
   gtag?: (...args: unknown[]) => void;
+  clarity?: ((...args: unknown[]) => void) & { q?: unknown[][] };
 }
 
 declare module "*.png" {

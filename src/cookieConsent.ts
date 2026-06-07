@@ -84,6 +84,11 @@ function loadGoogleAnalytics(): void {
 function loadClarity(): void {
   if (document.getElementById('clarity-script')) return;
 
+  // Ensure the queue stub exists in case index.html stub was somehow bypassed.
+  window.clarity = window.clarity || function (...args: unknown[]) {
+    (window.clarity!.q = window.clarity!.q || []).push(args);
+  };
+
   const script = document.createElement('script');
   script.id = 'clarity-script';
   script.async = true;
