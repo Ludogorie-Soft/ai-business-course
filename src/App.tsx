@@ -17,7 +17,8 @@ import {
   Mail, 
   TrendingUp, 
   MousePointer, 
-  Globe, 
+  Building2,
+  MapPin,
   Check,
   ChevronRight,
   Shield,
@@ -26,6 +27,7 @@ import {
 } from "lucide-react";
 
 import HERO_IMAGE from "./assets/images/ai_startup_hero_bg_bulgarian_1780401928788.png";
+import COURSE_LOGO from "./assets/images/AI-course-logo.png";
 import EMO_IMAGE from "./assets/images/Emo.png";
 import SEVDELIN_IMAGE from "./assets/images/Sevdelin.png";
 import { useCookieConsent } from "./CookieConsentProvider.tsx";
@@ -43,7 +45,7 @@ export default function App() {
   const [selectedFaq, setSelectedFaq] = useState<number | null>(null);
   const [showRedirectToast, setShowRedirectToast] = useState(false);
 
-  // Time Countdown to June 17, 2026 at 18:30 (Bulgaria Time EET)
+  // Time Countdown to June 16, 2026 at 18:00 (Bulgaria Time EET)
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -62,8 +64,8 @@ export default function App() {
     };
     window.addEventListener("scroll", handleScroll);
 
-    // Target launch date: June 17, 2026, 18:30:00 (EET / Bulgaria time is UTC +3 under standard DST in June)
-    const targetDate = new Date("2026-06-17T18:30:00+03:00").getTime();
+    // Target launch date: June 16, 2026, 18:00:00 (EET / Bulgaria time is UTC +3 under standard DST in June)
+    const targetDate = new Date("2026-06-16T18:00:00+03:00").getTime();
 
     const interval = setInterval(() => {
       const now = new Date().getTime();
@@ -135,15 +137,17 @@ export default function App() {
           <div className="flex items-center justify-between">
             {/* Logo */}
             <a href="#app-root" className="flex items-center gap-2.5 group">
-              <div className="bg-brand-accent/15 border border-brand-accent/40 p-2 rounded-xl group-hover:scale-105 transition-transform duration-300 shadow-[0_0_15px_rgba(255,140,66,0.15)]">
-                <Brain className="h-6 w-6 text-brand-accent animate-pulse-slow" />
-              </div>
+              <img
+                src={COURSE_LOGO}
+                alt="AI за стартиращ бизнес"
+                className="h-11 w-auto shrink-0 rounded-xl group-hover:scale-105 transition-transform duration-300"
+              />
               <div className="flex flex-col">
                 <span className="font-bold text-lg sm:text-xl tracking-tight leading-none text-white group-hover:text-brand-accent transition-colors">
                   AI за стартиращ бизнес
                 </span>
                 <span className="text-[10px] tracking-widest text-[#FFC19E]/80 uppercase font-bold mt-1">
-                  Безплатен онлайн курс
+                  Курс в град Враца
                 </span>
               </div>
             </a>
@@ -272,7 +276,7 @@ export default function App() {
               </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-5xl xl:text-6xl font-extrabold text-white tracking-tight leading-[1.1] text-left">
-                Научете как да стартирате бизнес с помощта на <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent via-amber-400 to-emerald-300">AI</span>
+                Помагаме на хора да стартират своят първи бизнес с помощта на <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-accent via-amber-400 to-emerald-300">AI</span> и ограничени ресурси.
               </h1>
 
               <p className="text-base sm:text-lg lg:text-xl text-[#D8E6DF] leading-relaxed max-w-2xl text-left">
@@ -287,7 +291,8 @@ export default function App() {
                     { label: "Безплатен курс", icon: Shield },
                     { label: "Безплатни AI инструменти", icon: Laptop },
                     { label: "Включване в AI общност", icon: Users },
-                    { label: "Онлайн обучение", icon: Globe }
+                    { label: "В град Враца", icon: Building2 },
+                    { label: "адрес: Гнездото (ул. Кокиче 14)", icon: MapPin }
                   ].map((item, index) => (
                     <div 
                       key={index} 
@@ -664,7 +669,7 @@ export default function App() {
             <h1 className="text-3xl sm:text-4xl font-extrabold tracking-tight">Дати и часове</h1>
             <div className="h-1 w-20 bg-brand-accent mx-auto rounded-full mt-2"></div>
             <p className="text-sm sm:text-base text-neutral-300 pt-1">
-              Сесиите се провеждат изцяло онлайн с възможности за въпроси и отговори в реално време.
+              Сесиите се провеждат присъствено в град Враца, ул. Кокиче 14 (Гнездото) с възможности за въпроси и отговори в реално време.
             </p>
           </div>
 
@@ -674,9 +679,9 @@ export default function App() {
               {
                 lecture: "Лекция 1",
                 title: "Идеи и Анализ",
-                date: "17 юни 2026",
-                time: "18:30 – 20:00",
-                day: "Сряда"
+                date: "16 юни 2026",
+                time: "18:00 – 19:30",
+                day: "Вторник"
               },
               {
                 lecture: "Лекция 2",
@@ -688,9 +693,9 @@ export default function App() {
               {
                 lecture: "Лекция 3",
                 title: "Измерване и SEO",
-                date: "24 юни 2026",
-                time: "18:30 – 20:00",
-                day: "Сряда"
+                date: "23 юни 2026",
+                time: "18:00 – 19:30",
+                day: "Вторник"
               },
               {
                 lecture: "Лекция 4",
@@ -725,13 +730,6 @@ export default function App() {
                 </span>
               </div>
             ))}
-          </div>
-
-          <div className="mt-8 text-center" id="schedule-note">
-            <span className="inline-block w-2.5 h-2.5 bg-emerald-500 rounded-full mr-2 animate-pulse"></span>
-            <span className="text-xs text-neutral-300 font-semibold">
-              Всички часове са по българско време (EET / София). Записите ще са налични!
-            </span>
           </div>
 
         </div>
@@ -992,7 +990,7 @@ export default function App() {
               </h2>
               
               <p className="text-base sm:text-lg text-neutral-200">
-                Заявете интерес още днес. Възползвайте се от безплатното практическо онлайн обучение.
+                Заявете интерес още днес. Възползвайте се от безплатното практическо обучение.
               </p>
 
               <div className="pt-6">
@@ -1007,21 +1005,6 @@ export default function App() {
                   <span>Заяви желание</span>
                   <ArrowRight className="h-6 w-6 stroke-[3]" />
                 </a>
-              </div>
-              
-              <div className="flex items-center justify-center gap-8 pt-4 flex-wrap text-xs text-neutral-300">
-                <div className="flex items-center gap-1.5">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-400" />
-                  <span>100% Безплатен Достъп</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-400" />
-                  <span>Официален Сертификат</span>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <CheckCircle2 className="h-4 w-4 text-emerald-400" />
-                  <span>Онлайн за всяко устройство</span>
-                </div>
               </div>
             </div>
 
@@ -1073,7 +1056,7 @@ export default function App() {
 
             {/* Right copyright details */}
             <div className="md:col-span-3 text-left md:text-right space-y-1">
-              <div className="text-xs text-[#FFC19E] font-bold">Безплатен онлайн курс</div>
+              <div className="text-xs text-[#FFC19E] font-bold">Курс и общност за подкрепа</div>
               <p className="text-xs text-neutral-400 mt-2">© 2026 Всички права запазени.</p>
               <button
                 type="button"
