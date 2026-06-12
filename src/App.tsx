@@ -45,7 +45,7 @@ export default function App() {
   const [selectedFaq, setSelectedFaq] = useState<number | null>(null);
   const [showRedirectToast, setShowRedirectToast] = useState(false);
 
-  // Time Countdown to June 16, 2026 at 18:00 (Bulgaria Time EET)
+  // Time Countdown to June 15, 2026 at 12:00 (Bulgaria Time EET)
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -64,8 +64,8 @@ export default function App() {
     };
     window.addEventListener("scroll", handleScroll);
 
-    // Target launch date: June 16, 2026, 18:00:00 (EET / Bulgaria time is UTC +3 under standard DST in June)
-    const targetDate = new Date("2026-06-16T18:00:00+03:00").getTime();
+    // Enrollment deadline: June 15, 2026, 12:00:00 (EET / Bulgaria time is UTC +3 under standard DST in June)
+    const targetDate = new Date("2026-06-15T12:00:00+03:00").getTime();
 
     const interval = setInterval(() => {
       const now = new Date().getTime();
@@ -340,11 +340,22 @@ export default function App() {
                 </a>
               </div>
 
+              {/* Enrollment Deadline */}
+              <div
+                className="bg-brand-dark/45 border border-brand-accent/30 p-3.5 rounded-2xl flex items-center gap-2.5 max-w-md w-full"
+                id="enrollment-deadline"
+              >
+                <Calendar className="h-4 w-4 text-brand-accent shrink-0" />
+                <span className="text-xs sm:text-sm font-semibold text-[#FFC19E]">
+                  Краен срок за записване: 15.06.2026г 12:00ч
+                </span>
+              </div>
+
               {/* Urgency Counter Widget */}
               <div className="bg-brand-dark/45 border border-brand-medium/40 p-4 rounded-2xl flex flex-wrap items-center gap-4 max-w-md w-full" id="countdown-widget">
                 <div className="flex items-center gap-2 text-[#FFC19E]">
                   <Clock className="h-5 w-5 animate-pulse-slow shrink-0" />
-                  <span className="text-xs font-bold uppercase tracking-wider">Начало след:</span>
+                  <span className="text-xs font-bold uppercase tracking-wider">Записване</span>
                 </div>
                 {!timeLeft.ended ? (
                   <div className="flex items-center gap-3">
