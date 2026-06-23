@@ -165,14 +165,11 @@ export default function App() {
             {/* CTA Button */}
             <div className="hidden sm:flex items-center gap-4">
               <a 
-                href={GOOGLE_FORM_URL}
-                target="_blank"
-                rel="noreferrer"
-                onClick={handleCtaClick}
+                href={ROUTES.preAccelerator}
                 className="bg-brand-accent hover:bg-brand-accent-hover text-white px-6 py-2.5 rounded-xl font-bold text-sm tracking-wide shadow-lg hover:shadow-brand-accent/30 transition-all duration-300 hover:-translate-y-0.5 inline-flex items-center gap-2 border border-brand-accent"
                 id="nav-cta"
               >
-                <span>Заяви желание</span>
+                <span>За стартиращи проекти</span>
                 <ArrowRight className="h-4 w-4" />
               </a>
             </div>
@@ -237,17 +234,12 @@ export default function App() {
               </a>
               <div className="pt-2">
                 <a 
-                  href={GOOGLE_FORM_URL}
-                  target="_blank"
-                  rel="noreferrer"
-                  onClick={(e) => {
-                    handleCtaClick(e);
-                    setMobileMenuOpen(false);
-                  }}
+                  href={ROUTES.preAccelerator}
+                  onClick={() => setMobileMenuOpen(false)}
                   className="w-full text-center bg-brand-accent hover:bg-brand-accent-hover text-white block py-3.5 rounded-xl font-bold tracking-wide shadow-lg transition-all"
                   id="mobile-nav-cta"
                 >
-                  Заяви желание
+                  За стартиращи проекти
                 </a>
               </div>
             </div>
@@ -328,14 +320,11 @@ export default function App() {
               {/* BIG CALL TO ACTION BUTTON */}
               <div className="flex flex-col sm:flex-row items-center gap-4 w-full pt-4 sm:w-auto" id="hero-actions">
                 <a 
-                  href={GOOGLE_FORM_URL}
-                  target="_blank"
-                  rel="noreferrer"
-                  onClick={handleCtaClick}
+                  href={ROUTES.preAccelerator}
                   className="w-full sm:w-auto bg-brand-accent hover:bg-brand-accent-hover text-white text-lg font-extrabold px-10 py-4.5 rounded-2xl shadow-[0_10px_30px_rgba(255,140,66,0.35)] transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-3 active:scale-[0.98] border border-brand-accent"
                   id="hero-cta"
                 >
-                  <span>Заяви желание за безплатен курс</span>
+                  <span>Към група за стартиращи проекти</span>
                   <ArrowRight className="h-5 w-5 stroke-[2.5]" />
                 </a>
               </div>
@@ -475,21 +464,6 @@ export default function App() {
                 <p className="text-sm text-neutral-300 leading-relaxed leading-[1.65]">{card.desc}</p>
               </div>
             ))}
-          </div>
-
-          {/* Inline CTA block for section 2 */}
-          <div className="mt-16 text-center">
-            <a 
-              href={GOOGLE_FORM_URL}
-              target="_blank"
-              rel="noreferrer"
-              onClick={handleCtaClick}
-              className="inline-flex items-center gap-2 bg-brand-accent hover:bg-brand-accent-hover text-white px-8 py-3.5 rounded-xl font-extrabold text-base tracking-wide transition-all shadow-lg hover:shadow-brand-accent/20"
-              id="about-cta"
-            >
-              <span>Започнете практическото обучение</span>
-              <ArrowRight className="h-5 w-5" />
-            </a>
           </div>
 
         </div>
@@ -1006,14 +980,11 @@ export default function App() {
 
               <div className="pt-6">
                 <a 
-                  href={GOOGLE_FORM_URL}
-                  target="_blank"
-                  rel="noreferrer"
-                  onClick={handleCtaClick}
+                  href={ROUTES.preAccelerator}
                   className="bg-brand-accent hover:bg-brand-accent-hover text-white text-lg sm:text-xl font-extrabold px-12 py-5 rounded-2xl shadow-[0_15px_35px_rgba(255,140,66,0.35)] transition-all duration-300 hover:scale-[1.03] inline-flex items-center justify-center gap-3 active:scale-[0.97] border border-brand-accent"
                   id="final-cta-btn"
                 >
-                  <span>Заяви желание</span>
+                  <span>Към група за стартиращи проекти</span>
                   <ArrowRight className="h-6 w-6 stroke-[3]" />
                 </a>
               </div>

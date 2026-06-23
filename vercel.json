@@ -1,5 +1,6 @@
 {
   "rewrites": [
+    {"source": "/pre-accelerator", "destination": "/index.html"},
     {"source": "/politika-za-poveritelnost", "destination": "/index.html"},
     {"source": "/politika-za-biskvitki", "destination": "/index.html"}
   ]
