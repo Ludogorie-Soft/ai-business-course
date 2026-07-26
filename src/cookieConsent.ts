@@ -2,7 +2,7 @@ const STORAGE_KEY = 'cookie-consent';
 const CONSENT_VERSION = 1;
 const TTL_MS = 90 * 24 * 60 * 60 * 1000; // 3 months
 
-const GA_ID = import.meta.env.VITE_GA_MEASUREMENT_ID ?? 'G-MC0LZ6WJNE';
+const GA_ID = import.meta.env.VITE_GA_MEASUREMENT_ID ?? 'G-JYZ1RKX9HZ';
 const CLARITY_ID = import.meta.env.VITE_CLARITY_PROJECT_ID ?? 'x1xhd22x43';
 
 export type ConsentStatus = 'accepted' | 'rejected' | null;

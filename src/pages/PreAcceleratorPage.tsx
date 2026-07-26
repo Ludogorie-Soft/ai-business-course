@@ -11,6 +11,7 @@ import {
   Lightbulb,
   Mail,
   MapPin,
+  Megaphone,
   MessageSquarePlus,
   Rocket,
   Sparkles,
@@ -27,6 +28,8 @@ const INTEREST_FORM_URL = 'https://forms.gle/E2qZ1u8P1pzoPVjn7';
 
 const BIZDEV_B2B_URL = 'https://ai-first-biz-dev-b2b-organizer-fe.vercel.app/';
 const BUSINESS_EVENTS_URL = 'https://business-events-catalog.vercel.app/';
+const COMPANIES_INTELLIGENCE_URL = 'https://ai-first-companies-intelligence-fe.onrender.com';
+const SOCIAL_POSTS_GENERATOR_URL = 'https://ai-first-social-networks-post-assis-eta.vercel.app';
 
 type FeatureItem = {
   icon: typeof Users;
@@ -34,6 +37,7 @@ type FeatureItem = {
   desc: string;
   href?: string;
   inDevelopment?: boolean;
+  beta?: boolean;
   highlight?: boolean;
 };
 
@@ -73,13 +77,20 @@ const FEATURE_GROUPS: {title: string; subtitle: string; items: FeatureItem[]}[] 
         icon: TrendingUp,
         title: 'Business intelligence',
         desc: 'Извличане на полезни контакти и персонализирана информация за всеки от тях.',
-        inDevelopment: true,
+        href: COMPANIES_INTELLIGENCE_URL,
+        beta: true,
       },
       {
         icon: MapPin,
         title: 'Каталог за бизнес събития',
         desc: 'Събития във Враца, София и онлайн — с абонамент и имейл нотификации на дневна или седмична база.',
         href: BUSINESS_EVENTS_URL,
+      },
+      {
+        icon: Megaphone,
+        title: 'Генератор за постове в соц. мрежи',
+        desc: 'Генерира публикации за социални мрежи на база RSS feed и други източници.',
+        href: SOCIAL_POSTS_GENERATOR_URL,
       },
       {
         icon: MessageSquarePlus,
@@ -287,6 +298,11 @@ export function PreAcceleratorPage() {
                           : 'bg-brand-dark/50 hover:bg-brand-dark border border-brand-medium/55 hover:border-brand-accent/40'
                       }`}
                     >
+                      {item.beta && (
+                        <div className="absolute top-4 right-4 text-[10px] font-bold uppercase tracking-wider text-sky-300 bg-sky-500/15 px-2.5 py-1 rounded-md border border-sky-500/35">
+                          Бета
+                        </div>
+                      )}
                       {item.inDevelopment && (
                         <div className="absolute top-4 right-4 text-[10px] font-bold uppercase tracking-wider text-amber-300 bg-amber-500/15 px-2.5 py-1 rounded-md border border-amber-500/35">
                           В процес на разработка
