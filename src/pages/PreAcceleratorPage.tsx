@@ -397,6 +397,9 @@ export function PreAcceleratorPage() {
               <a href={ROUTES.home} className="hover:text-brand-accent transition-colors">
                 Начало
               </a>
+              <a href={ROUTES.companiesTraining} className="hover:text-brand-accent transition-colors">
+                AI обучения за фирми
+              </a>
               <a href={ROUTES.preAccelerator} className="hover:text-brand-accent transition-colors">
                 Pre-accelerator
               </a>

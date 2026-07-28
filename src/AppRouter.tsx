@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react';
 import App from './App.tsx';
 import {ROUTES} from './constants/legal.ts';
+import {CompaniesAiTrainingPage} from './pages/CompaniesAiTrainingPage.tsx';
 import {CookiePolicyPage} from './pages/CookiePolicyPage.tsx';
 import {PreAcceleratorPage} from './pages/PreAcceleratorPage.tsx';
 import {PrivacyPolicyPage} from './pages/PrivacyPolicyPage.tsx';
@@ -23,6 +24,8 @@ export function AppRouter() {
   switch (pathname) {
     case ROUTES.preAccelerator:
       return <PreAcceleratorPage />;
+    case ROUTES.companiesTraining:
+      return <CompaniesAiTrainingPage />;
     case ROUTES.privacy:
       return <PrivacyPolicyPage />;
     case ROUTES.cookies:

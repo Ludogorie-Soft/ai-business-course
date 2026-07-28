@@ -163,13 +163,19 @@ export default function App() {
             </nav>
 
             {/* CTA Button */}
-            <div className="hidden sm:flex items-center gap-4">
-              <a 
+            <div className="hidden sm:flex items-center gap-3 lg:gap-4">
+              <a
                 href={ROUTES.preAccelerator}
+                className="hidden lg:inline text-sm font-semibold text-neutral-200 hover:text-brand-accent transition-colors"
+              >
+                За стартиращи проекти
+              </a>
+              <a 
+                href={ROUTES.companiesTraining}
                 className="bg-brand-accent hover:bg-brand-accent-hover text-white px-6 py-2.5 rounded-xl font-bold text-sm tracking-wide shadow-lg hover:shadow-brand-accent/30 transition-all duration-300 hover:-translate-y-0.5 inline-flex items-center gap-2 border border-brand-accent"
                 id="nav-cta"
               >
-                <span>За стартиращи проекти</span>
+                <span>AI обучения за фирми</span>
                 <ArrowRight className="h-4 w-4" />
               </a>
             </div>
@@ -232,14 +238,21 @@ export default function App() {
               >
                 ЧЗВ
               </a>
+              <a
+                href={ROUTES.preAccelerator}
+                onClick={() => setMobileMenuOpen(false)}
+                className="block px-4 py-2.5 rounded-xl text-base font-semibold text-neutral-200 hover:bg-brand-medium/40 hover:text-brand-accent transition-all"
+              >
+                За стартиращи проекти
+              </a>
               <div className="pt-2">
                 <a 
-                  href={ROUTES.preAccelerator}
+                  href={ROUTES.companiesTraining}
                   onClick={() => setMobileMenuOpen(false)}
                   className="w-full text-center bg-brand-accent hover:bg-brand-accent-hover text-white block py-3.5 rounded-xl font-bold tracking-wide shadow-lg transition-all"
                   id="mobile-nav-cta"
                 >
-                  За стартиращи проекти
+                  AI обучения за фирми
                 </a>
               </div>
             </div>
@@ -320,11 +333,11 @@ export default function App() {
               {/* BIG CALL TO ACTION BUTTON */}
               <div className="flex flex-col sm:flex-row items-center gap-4 w-full pt-4 sm:w-auto" id="hero-actions">
                 <a 
-                  href={ROUTES.preAccelerator}
+                  href={ROUTES.companiesTraining}
                   className="w-full sm:w-auto bg-brand-accent hover:bg-brand-accent-hover text-white text-lg font-extrabold px-10 py-4.5 rounded-2xl shadow-[0_10px_30px_rgba(255,140,66,0.35)] transition-all duration-300 hover:scale-[1.02] flex items-center justify-center gap-3 active:scale-[0.98] border border-brand-accent"
                   id="hero-cta"
                 >
-                  <span>Към група за стартиращи проекти</span>
+                  <span>AI обучения за фирми</span>
                   <ArrowRight className="h-5 w-5 stroke-[2.5]" />
                 </a>
               </div>
@@ -980,11 +993,11 @@ export default function App() {
 
               <div className="pt-6">
                 <a 
-                  href={ROUTES.preAccelerator}
+                  href={ROUTES.companiesTraining}
                   className="bg-brand-accent hover:bg-brand-accent-hover text-white text-lg sm:text-xl font-extrabold px-12 py-5 rounded-2xl shadow-[0_15px_35px_rgba(255,140,66,0.35)] transition-all duration-300 hover:scale-[1.03] inline-flex items-center justify-center gap-3 active:scale-[0.97] border border-brand-accent"
                   id="final-cta-btn"
                 >
-                  <span>Към група за стартиращи проекти</span>
+                  <span>AI обучения за фирми</span>
                   <ArrowRight className="h-6 w-6 stroke-[3]" />
                 </a>
               </div>
@@ -1020,6 +1033,12 @@ export default function App() {
               <a href="#lecturers" className="hover:text-brand-accent transition-colors">Лектори</a>
               <a href="#audience" className="hover:text-brand-accent transition-colors">За кого е</a>
               <a href="#faq" className="hover:text-brand-accent transition-colors">ЧЗВ</a>
+              <a href={ROUTES.companiesTraining} className="hover:text-brand-accent transition-colors">
+                AI обучения за фирми
+              </a>
+              <a href={ROUTES.preAccelerator} className="hover:text-brand-accent transition-colors">
+                Pre-accelerator
+              </a>
               <a
                 href={ROUTES.privacy}
                 {...LEGAL_LINK_PROPS}

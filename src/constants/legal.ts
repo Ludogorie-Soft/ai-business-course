@@ -10,6 +10,7 @@ export const LAST_UPDATED = '4 юни 2026 г.';
 export const ROUTES = {
   home: '/',
   preAccelerator: '/pre-accelerator',
+  companiesTraining: '/ai-obucheniya-za-firmi',
   privacy: '/politika-za-poveritelnost',
   cookies: '/politika-za-biskvitki',
 } as const;
