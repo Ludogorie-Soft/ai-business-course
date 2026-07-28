@@ -3,7 +3,7 @@ import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {config as loadEnv} from 'dotenv';
 import type {Plugin} from 'vite';
-import {sendMeetingRequest} from '../api/lib/send-meeting-request.ts';
+import {sendMeetingRequest} from '../api/book-meeting.ts';
 
 const rootDir = path.dirname(fileURLToPath(import.meta.url));
 
