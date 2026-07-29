@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react';
 import {
   ArrowLeft,
   ArrowRight,
+  Award,
   Brain,
   Building2,
   CalendarDays,
@@ -9,6 +10,7 @@ import {
   ChevronDown,
   Clock,
   Code2,
+  Euro,
   ExternalLink,
   Globe2,
   Languages,
@@ -33,6 +35,24 @@ const SEMINAR_INCLUDES = [
   {icon: Users, text: 'Адаптиран за вашия екип и бизнес'},
   {icon: Languages, text: 'На български или английски език'},
   {icon: Zap, text: 'Практически AI инструменти, не теория'},
+] as const;
+
+const WHY_US_REASONS = [
+  {
+    icon: Award,
+    title: 'Имаме добър опит в AI обученията',
+    desc: 'Водещият обученията, Емилиян Кадийски има над 15г професионален опит като уеб програмист и преподавател. Последните години работи активно с AI и го е прилагал в редица проекти с различни цели. Успешно проведените от нас обучения и нашият курс „AI за стартиращ бизнес“ ни дадоха ясна представа къде компаниите срещат най-големи затруднения при приемането на AI и как да ги преодолеем бързо и лесно.',
+  },
+  {
+    icon: Clock,
+    title: 'Спестяваме ценно време',
+    desc: 'Времето на мениджърите и специалистите по екипи е ограничено. Ние отделяме 90 минути, за да ви запознаем с най-ефективните AI инструменти в помощ на процесите на вашата фирма.',
+  },
+  {
+    icon: Euro,
+    title: 'Имаме ценови предимства',
+    desc: 'Наши конкуренти искат 150 евро на участник и в замяна предоставят вече изработени записи. За 399 €, ние от Ludogoriesoft обучаваме целия ви екип върху техните собствени казуси.',
+  },
 ] as const;
 
 const COVERAGE_TOPICS = [
@@ -165,6 +185,9 @@ export function CompaniesAiTrainingPage() {
             </a>
 
             <nav className="hidden lg:flex items-center gap-6">
+              <a href="#why-us" className="text-sm font-semibold text-neutral-200 hover:text-brand-accent transition-colors">
+                Защо нас
+              </a>
               <a href="#coverage" className="text-sm font-semibold text-neutral-200 hover:text-brand-accent transition-colors">
                 Обхват
               </a>
@@ -276,6 +299,51 @@ export function CompaniesAiTrainingPage() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why us */}
+      <section id="why-us" className="py-20 bg-brand-deep">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center max-w-3xl mx-auto space-y-4 mb-12">
+            <h2 className="text-xs sm:text-sm font-bold uppercase tracking-widest text-[#FFC19E]">Предимства</h2>
+            <h3 className="text-3xl sm:text-4xl font-extrabold tracking-tight">Защо да изберете нас?</h3>
+            <div className="h-1 w-20 bg-brand-accent mx-auto rounded-full" />
+          </div>
+
+          <div className="bg-gradient-to-br from-brand-accent/15 to-brand-dark/60 border-2 border-brand-accent/45 rounded-2xl p-6 sm:p-8 mb-8 shadow-xl">
+            <div className="flex items-start gap-4">
+              <div className="h-12 w-12 bg-brand-accent/20 text-brand-accent rounded-xl flex items-center justify-center shrink-0">
+                <Sparkles className="h-6 w-6" />
+              </div>
+              <div className="space-y-3">
+                <h4 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">
+                  Персонализираме всяко обучение.
+                </h4>
+                <p className="text-sm sm:text-base text-neutral-200 leading-relaxed">
+                  Стандартните курсове предлагат общи примери. Ние правим предварителен одит на вашите процеси и
+                  работим целенасочено за работещи решения по вашите казуси.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {WHY_US_REASONS.map((reason) => (
+              <div
+                key={reason.title}
+                className="bg-brand-dark/50 border border-brand-medium/55 hover:border-brand-accent/40 rounded-2xl p-6 sm:p-7 shadow-xl transition-all duration-300 hover:-translate-y-1.5 group"
+              >
+                <div className="h-12 w-12 bg-brand-accent/10 text-brand-accent rounded-xl flex items-center justify-center mb-5 group-hover:scale-110 transition-all duration-300">
+                  <reason.icon className="h-6 w-6" />
+                </div>
+                <h4 className="text-lg font-bold text-white mb-3 group-hover:text-brand-accent transition-colors">
+                  {reason.title}
+                </h4>
+                <p className="text-sm text-neutral-300 leading-relaxed">{reason.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
